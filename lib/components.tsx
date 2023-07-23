@@ -18,6 +18,12 @@ type RouteProps = {
   children: React.ReactNode;
 };
 
+type LinkProps = {
+  to: string;
+  className?: string;
+  children: React.ReactNode;
+};
+
 // * Router
 const Router = ({ children }: RouterProps) => {
   const [currentPath, setCurrentPath] = useState<string>(window.location.pathname);
@@ -52,4 +58,22 @@ const Route = ({ path, children }: RouteProps) => {
   return null;
 };
 
-export { Router, Route };
+// * Link
+const Link = ({ to, className, children }: LinkProps) => {
+  const { navigate } = useNavigation();
+
+  const clickHandler = (e: React.MouseEvent) => {
+    if (e.ctrlKey || e.metaKey) return;
+
+    e.preventDefault();
+    navigate(to);
+  };
+
+  return (
+    <a href={to} onClick={clickHandler} className={className}>
+      {children}
+    </a>
+  );
+};
+
+export { Router, Route, Link };
