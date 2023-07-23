@@ -3,10 +3,18 @@ import { useState, useEffect } from 'react';
 // * context
 import { NavigationContext } from './context';
 
+// * hooks
+import { useNavigation } from './hooks';
+
 // * types
 import type { NavigationCtx } from './context';
 
 type RouterProps = {
+  children: React.ReactNode;
+};
+
+type RouteProps = {
+  path: string;
   children: React.ReactNode;
 };
 
@@ -35,4 +43,13 @@ const Router = ({ children }: RouterProps) => {
   return <NavigationContext.Provider value={ctx}>{children}</NavigationContext.Provider>;
 };
 
-export { Router };
+// * Route
+const Route = ({ path, children }: RouteProps) => {
+  const { currentPath } = useNavigation();
+
+  if (currentPath === path) return children;
+
+  return null;
+};
+
+export { Router, Route };
