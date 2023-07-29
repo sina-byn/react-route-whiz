@@ -1,7 +1,7 @@
 {
   "name": "react-route-whiz",
   "version": "1.0.1",
-  "description": "",
+  "description": "react routing simplified - a simple react routing library providing basic routing utilities",
   "main": "./build/bundle.js",
   "directories": {
     "lib": "lib"
@@ -9,9 +9,16 @@
   "scripts": {
     "build": "rollup -c"
   },
-  "keywords": [],
-  "author": "Sina Bayandorian",
-  "license": "ISC",
+  "author": {
+    "name": "Sina Bayandorian",
+    "email": "sina.sina.bayan@protonmail.com",
+    "url": "https://portfolio-sina-byn.vercel.app/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sina-byn/react-route-whiz"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.2",
@@ -20,5 +27,20 @@
     "rollup": "^3.26.3",
     "tslib": "^2.6.0",
     "typescript": "^5.1.6"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "rollup",
+    "routing",
+    "router",
+    "route",
+    "link",
+    "react-router",
+    "react-route-whiz"
+  ],
+  "bugs": {
+    "url": "https://github.com/sina-byn/react-route-whiz/issues",
+    "email": "sina.sina.bayan@protonmail.com"
   }
 }
